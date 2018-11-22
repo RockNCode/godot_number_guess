@@ -3,6 +3,7 @@ extends Node
 var guess
 var min_guessed = 0
 var max_guessed = 1000
+var ended = false
 
 func _ready():
 	guess = ( min_guessed + max_guessed ) / 2
@@ -21,6 +22,12 @@ func _process(delta):
 	elif Input.is_action_just_pressed("down"):
 		_try_guess("down")
 		print("Down pressed")
+	elif Input.is_action_just_pressed("space"):
+		if ended:
+			_restart_game()
+		else:
+			_end_game()
+		
 	
 #type up = greater or down = lesser	
 func _try_guess(type):
@@ -31,3 +38,10 @@ func _try_guess(type):
 	guess = (min_guessed + max_guessed ) / 2
 	
 	print("Is " + str(guess) + " your number ? ")
+	
+func _end_game():
+	ended = true
+	print("Yes! I knew it! Your number was: " + str(guess) )
+
+func _restart_game():
+	get_tree().reload_current_scene()
