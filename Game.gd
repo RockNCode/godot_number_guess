@@ -4,6 +4,7 @@ var guess
 var min_guessed = 0
 var max_guessed = 1000
 var ended = false
+onready var message = $Message
 
 func _ready():
 	guess = ( min_guessed + max_guessed ) / 2
@@ -12,7 +13,8 @@ func _ready():
 	print("--------------------------")
 	print("Hello from Number Guesser!")
 	print("I'll guess any number that you can think between 0 and 1000")
-	print("Is " + str(guess) + "your number ? ")
+	print("Is " + str(guess) + " your number ? ")
+	message.text = "Is " + str(guess) + " your number ? "
 	pass
 	
 func _process(delta):
@@ -38,10 +40,12 @@ func _try_guess(type):
 	guess = (min_guessed + max_guessed ) / 2
 	
 	print("Is " + str(guess) + " your number ? ")
+	message.text = "Is " + str(guess) + "your number ? "
 	
 func _end_game():
 	ended = true
 	print("Yes! I knew it! Your number was: " + str(guess) )
+	message.text = "Yes! I knew it! Your number was: " + str(guess)
 
 func _restart_game():
 	get_tree().reload_current_scene()
