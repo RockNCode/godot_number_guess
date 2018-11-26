@@ -13,10 +13,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 444.0
-margin_top = 38.0
-margin_right = 822.0
-margin_bottom = 120.0
+margin_left = 240.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -31,7 +31,7 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Hello world"
+text = "Guess number game"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -68,5 +68,95 @@ scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="b_greater" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 591.0
+margin_top = 282.0
+margin_right = 878.0
+margin_bottom = 402.0
+rect_rotation = -0.839201
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Greater"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="b_lesser" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 99.0
+margin_top = 293.0
+margin_right = 386.0
+margin_bottom = 413.0
+rect_rotation = -0.839201
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Lesser"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="b_right" type="Button" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 349.0
+margin_top = 438.0
+margin_right = 636.0
+margin_bottom = 558.0
+rect_rotation = -0.839201
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Right"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="b_greater" to="." method="_on_b_greater_pressed"]
+
+[connection signal="pressed" from="b_lesser" to="." method="_on_b_lesser_pressed"]
+
+[connection signal="pressed" from="b_right" to="." method="_on_b_right_pressed"]
 
 
